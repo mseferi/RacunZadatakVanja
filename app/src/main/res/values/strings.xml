@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RacunZadatak1</string>
+    <string name="nayiv_firme">nayiv firme</string>
+    <string name="print">Print</string>
+    <string name="bold">Bold</string>
+    <string name="font_size">Font size</string>
+    <string name="text">Text</string>
+    <string name="todo">TODO</string>
+</resources>
