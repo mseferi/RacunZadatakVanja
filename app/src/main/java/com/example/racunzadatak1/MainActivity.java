@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         data.add(new ListItem("Company name", false, false, 16));
         data.add(new ListItem("VAT", true, true, 18));
         data.add(new ListItem("TAX ID", false, true, 12));
+        data.add(new ListItem("User info", false, true, 12));
 
         MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, data);
         RecyclerView rvData = findViewById(R.id.rvData);
