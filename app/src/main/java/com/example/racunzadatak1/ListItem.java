@@ -1,6 +1,8 @@
 package com.example.racunzadatak1;
 
-public class ListItem {
+import java.io.Serializable;
+
+public class ListItem implements Serializable {
     private String itemText;
     private boolean isPrintable;
     private boolean isBold;
