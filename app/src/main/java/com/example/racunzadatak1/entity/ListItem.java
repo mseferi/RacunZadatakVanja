@@ -1,4 +1,4 @@
-package com.example.racunzadatak1;
+package com.example.racunzadatak1.entity;
 
 import java.io.Serializable;
 

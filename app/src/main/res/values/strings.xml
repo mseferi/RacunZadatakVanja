@@ -6,4 +6,6 @@
     <string name="font_size">Font size</string>
     <string name="text">Text</string>
     <string name="todo">TODO</string>
+    <string name="change_font_size">Change font size</string>
+    <string name="delete">delete</string>
 </resources>
