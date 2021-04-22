@@ -89,7 +89,7 @@
             android:layout_weight="1"
             android:background="@null"
             android:contentDescription="@string/todo"
-            android:tint="@color/primary_dark"
+            android:tint="@color/black"
             app:srcCompat="@drawable/ic_drag_button" />
     </LinearLayout>
 

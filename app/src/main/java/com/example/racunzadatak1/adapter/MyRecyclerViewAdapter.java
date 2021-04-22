@@ -2,6 +2,8 @@ package com.example.racunzadatak1.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +48,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         return new ViewHolder(view);
     }
 
+
+
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
@@ -57,14 +61,42 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         holder.ibDelete.setOnClickListener(v -> {
             // remove your item from data base
-            items.remove(position);  // remove the item from list
-            notifyItemRemoved(position); // notify the adapter about the removed item
+            items.remove(item);  // remove the item from list
             notifyDataSetChanged();
         });
 
 
+//        holder.etItemText.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                items.get(position).setItemText(s.toString());
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+
+
+        if (holder.cbIsBold.isChecked()) {
+            holder.etItemText.setTypeface(holder.etItemText.getTypeface(), Typeface.BOLD);
+
+        } else {
+            holder.etItemText.setTypeface(null, Typeface.NORMAL);
+
+        }
+
+
         //bolds text in etItemText when checkbox cbIsBold is checked
         CompoundButton.OnCheckedChangeListener listener = (buttonView, isChecked) -> {
+            items.get(position).setBold(holder.cbIsBold.isChecked());
 
             if (holder.cbIsBold.isChecked()) {
                 holder.etItemText.setTypeface(holder.etItemText.getTypeface(), Typeface.BOLD);
@@ -74,6 +106,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             }
         };
         holder.cbIsBold.setOnCheckedChangeListener(listener);
+
+
     }
 
     // total number of rows
